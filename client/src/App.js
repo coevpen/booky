@@ -4,11 +4,12 @@ import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
 import {
-  ApolloProvider,
   ApolloClient,
+  InMemoryCache,
+  ApolloProvider,
   createHttpLink,
-  InMemoryCache
 } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
