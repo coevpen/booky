@@ -28,9 +28,9 @@ app.use(express.json());
 
 // if we're in production, serve client/build as static assets
 if (process.env.NODE_ENV) {
-  app.use(express.static(path.resolve(process.cwd(), 'client/build')));
+  app.use(express.static(path.resolve(process.cwd(), '../client/build')));
   app.get('*', (req,res) => {
-    res.sendFile(path.resolve(process.cwd(), 'client/build/index.html'));
+    res.sendFile(path.resolve(process.cwd(), '../client/build/index.html'));
   });
 }
 
